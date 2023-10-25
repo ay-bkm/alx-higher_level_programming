@@ -39,7 +39,7 @@ class Square:
             self.__size = value
 
     def my_print(self):
-        """ This method prints a square of '#' symbols according to the size value.
+        """ This method prints a square of '#' symbols according to size value.
         """
         if not self.__size:
             print()

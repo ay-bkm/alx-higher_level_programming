@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This module defines classes for a singly-linked list."""
 
+
 class Node:
     """This class represents a node in a singly-linked list."""
 
@@ -58,12 +59,14 @@ class SinglyLinkedList:
     def sorted_insert(self, value):
         """Inserts a new Node into the list in sorted order."""
         newNode = Node(value)
+
         if self.__head is None or self.__head.data >= newNode.data:
             newNode.next_node = self.__head
             self.__head = newNode
         else:
             ptr = self.__head
-            while ptr.next_node is not None and ptr.next_node.data < newNode.data:
+            while (ptr.next_node is not None and
+                   ptr.next_node.data < newNode.data):
                 ptr = ptr.next_node
             newNode.next_node = ptr.next_node
             ptr.next_node = newNode

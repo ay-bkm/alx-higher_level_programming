@@ -27,7 +27,7 @@ class Square:
         return self.__size > other.__size
 
     def __ge__(self, other):
-        """Defines the greater-than-or-equal-to comparison to another Square."""
+        """the greater-than-or-equal-to comparison to another Square."""
         return self.__size >= other.__size
 
     def __init__(self, size=0):

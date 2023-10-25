@@ -40,7 +40,7 @@ class Square:
         """
         if not isinstance(value, tuple) or len(value) != 2 or \
            not all(isinstance(i, int) and i >= 0 for i in value):
-            raise TypeError("Position must be a tuple of 2 non-negative integers.")
+            raise TypeError("Position must be a tuple of 2 non-negative ints.")
         self.__position = value
 
     def area(self):
@@ -49,10 +49,19 @@ class Square:
         return (self.__size ** 2)
 
     def my_print(self):
-        """ This method prints a square of '#' symbols according to the size and position values.
+        """ prints a square of '#' symbols according to size, position values.
         """
         if self.size == 0:
             print()
         else:
             print("\n" * self.position[1], end="")
-            print("\n".join(" " * self.position[0] + "#" * self.size for _ in range(self.size)))
+            # Create the string for each row
+            row = " " * self.position[0] + "#" * self.size
+
+            # Repeat the string for the size of the object
+            rows = [row for _ in range(self.size)]
+
+            # Join all rows with a newline character
+            result = "\n".join(rows)
+
+            print(result)
